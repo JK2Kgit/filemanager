@@ -1,0 +1,61 @@
+html, body { padding: 0; margin: 0; width: 100%; height: 100%; min-width: 825px; }
+.navbar{
+    display: flex;
+    height: 70px;
+    padding: 10px;
+    background-color: blue;
+    align-items: center;
+}
+.link{
+    display: flex;
+    height: 100%;
+    width: 20%;
+    align-items: center;
+}
+.link a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+.content{
+    display: flex;
+    height: 100%;
+    font-family: "Comic Sans MS", serif;
+}
+.side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    background-color: lightgray;
+    color: gray;
+}
+.side p a{
+    color: gray;
+}
+.center{
+    display: flex;
+    width: 80%;
+    align-items: flex-start;
+}
+.upload{
+    padding: 5%
+}
+table{
+    border-spacing: 0;
+    width: 100%;
+}
+
+thead {
+    background-color: darkblue;
+    color: white;
+}
+tr{
+    height: 50px;
+}
+th {
+    width: 10%;
+}
+.name{
+    width: 30%;
+}

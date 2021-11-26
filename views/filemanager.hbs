@@ -1,0 +1,33 @@
+<table>
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>image</th>
+    <th class="name">name</th>
+    <th>size</th>
+    <th>type</th>
+    <th>-</th>
+    <th>-</th>
+    <th>-</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each files}}
+    <tr>
+      <th>{{id}}</th>
+      <th>
+        <picture>
+          <source srcset="/gfx/{{type}}.png">
+          <img src="/gfx/unknown.png" alt=""/>
+        </picture>
+      </th>
+      <th class="name">{{name}}</th>
+      <th>{{size}}</th>
+      <th>{{type}}</th>
+      <th><a href="/delete/{{id}}">DELETE</a></th>
+      <th><a href="/info/{{id}}">INFO</a></th>
+      <th><a href={{path}} download={{name}}">DOWNLOAD</a></th>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
