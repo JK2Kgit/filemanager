@@ -5,7 +5,7 @@ import formidableMiddleware from "express-formidable"
 import fs from "fs"
 
 const app = express()
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;;
 const reName = /(?:\.([^.]+))?$/;
 
 let files = []
