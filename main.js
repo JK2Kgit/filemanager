@@ -93,3 +93,6 @@ app.listen(PORT, function () {
   console.log("started at port: " + PORT)
 })
 
+if (!fs.existsSync('./static/uploads')){
+    fs.mkdirSync('./static/uploads');
+}
