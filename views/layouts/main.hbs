@@ -10,22 +10,25 @@
   <title>FileManager</title>
 </head>
 <body>
-<div class="navbar">
-  <div class="link"><a href="/upload">UPLOAD</a></div>
-  <div class="link"><a href="/filemanager">FILEMANAGER</a></div>
-</div>
 <div class="content">
-  <div class="side">
-    <h3>
-      {{sideTitle}}
-    </h3>
-    <p>
-      <a href="/clearTable">{{sideText}}</a>
-    </p>
+  <div class="navbar">
+    <div class="link"><a href="/upload">UPLOAD</a></div>
+    <div class="link"><a href="/filemanager">FILEMANAGER</a></div>
   </div>
-  <div class="center">
+  <div class="body">
+    <div class="side">
+      <h3>
+        {{sideTitle}}
+      </h3>
+      <p>
+        <a href="/reset">{{sideText}}</a>
+      </p>
+    </div>
+    <div class="center">
       {{{body}}}
+    </div>
   </div>
 </div>
+
 </body>
 </html>

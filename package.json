@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "live": "nodemon main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JK2Kgit/filemanager/issues"
-  },
+  },`
   "homepage": "https://github.com/JK2Kgit/filemanager#readme",
   "dependencies": {
     "@supercharge/filesystem": "^2.3.0",

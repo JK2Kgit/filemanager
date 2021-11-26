@@ -16,17 +16,14 @@
     <tr>
       <th>{{id}}</th>
       <th>
-        <picture>
-          <source srcset="/gfx/{{type}}.png">
-          <img src="/gfx/unknown.png" alt=""/>
-        </picture>
+        <img src="/gfx/{{img}}.png" height="60">
       </th>
       <th class="name">{{name}}</th>
       <th>{{size}}</th>
       <th>{{type}}</th>
       <th><a href="/delete/{{id}}">DELETE</a></th>
       <th><a href="/info/{{id}}">INFO</a></th>
-      <th><a href={{path}} download={{name}}">DOWNLOAD</a></th>
+      <th><a href={{path}} download={{name}}>DOWNLOAD</a></th>
     </tr>
   {{/each}}
   </tbody>

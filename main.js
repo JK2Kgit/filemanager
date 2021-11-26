@@ -2,7 +2,7 @@ import express from "express"
 import {engine} from "express-handlebars"
 import path from "path"
 import formidableMiddleware from "express-formidable"
-import Fs from "@supercharge/filesystem"
+import fs from "fs"
 
 const app = express()
 const PORT = 3000;
@@ -36,16 +36,18 @@ app.get('/upload', function (req, res) {
 app.post('/upload', async function (req, res) {
   await Promise.all((Array.isArray(req.files.uploadedFiles) ? req.files.uploadedFiles: [req.files.uploadedFiles]).map(async (file) => {
     file.id = id++
+    file.savedate = Date.now()
     const pos  = file.path.search('/static')
     file.path = file.path.substring(pos + 7)
-    const ext = reName.exec(file.name)
+    const ext = reName.exec(file.name)[1].toUpperCase()
 
     const fPatch = path.join(path.resolve(), `/static/gfx/${ext}.png`)
 
-    if(Fs.exists(fPatch)){
+    console.log(file.name, ext, fPatch)
+    if(fs.existsSync(fPatch)){
       file.img = ext
     }else {
-      file.img = '???'
+      file.img = 'unknown'
     }
     files.push(file)
   }))
@@ -56,6 +58,7 @@ app.post('/upload', async function (req, res) {
 app.get('/filemanager', function (req, res) {
   res.render('filemanager.hbs', {
     sideTitle: "multiupload",
+    sideText: "USUŃ DANE O PLIKACH Z TABLICY",
     files: files,
   })
 })
@@ -70,6 +73,17 @@ app.get('/delete/:id', function (req, res) {
 
 app.get('/info/:id', function (req, res) {
 
+
+    res.render('info.hbs', {
+    sideTitle: "file info",
+    file: files.find((f) => f.id === parseInt(req.params.id)),
+  })
+})
+
+app.get('/reset', function (req, res) {
+  files = []
+
+  res.redirect('/upload')
 })
 
 
